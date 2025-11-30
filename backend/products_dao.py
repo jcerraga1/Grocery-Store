@@ -39,13 +39,13 @@ def delete_product(connection, product_id):
     cursor.execute(query)
     connection.commit()
 
-def update_product(connection, product_id, new_price):
+def update_product(connection, product):
     cursor = connection.cursor()
     query = ("UPDATE products "
-             "SET price_per_unit = %s "
+             "SET name = %s, uom_id = %s, price_per_unit = %s "
              "WHERE product_id = %s")
 
-    data = (new_price, product_id)
+    data = (product["product_name"], product["uom_id"], product["price_per_unit"], product["product_id"])
     cursor.execute(query, data)
     connection.commit()
     return cursor.rowcount

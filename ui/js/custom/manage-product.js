@@ -7,6 +7,7 @@ let productModal = $("#productModal");
                 let table = '';
                 $.each(response, function(index, product) {
                     table += '<tr data-id="'+ product.product_id +'" data-name="'+ product.name +'" data-unit="'+ product.uom_id +'" data-price="'+ product.price_per_unit +'">' +
+                        '<td style="display: none">'+ product.product_id +'</td>'+
                         '<td>'+ product.name +'</td>'+
                         '<td>'+ product.uom_name +'</td>'+
                         '<td>'+ product.price_per_unit +'</td>'+
@@ -74,10 +75,12 @@ let productModal = $("#productModal");
 
     $(document).on("click", ".edit-product", function() {
       const row = $(this).closest("tr");
-      const name = row.find("td:eq(0)").text();
-      const unitName = row.find("td:eq(1)").text(); // UOM name from table
-      const price = row.find("td:eq(2)").text();
+      const id = row.find("td:eq(0)").text();
+      const name = row.find("td:eq(1)").text();
+      const unitName = row.find("td:eq(2)").text(); // UOM name from table
+      const price = row.find("td:eq(3)").text();
 
+      $("#id").val(id);
       $("#name").val(name);
       $("#price").val(price);
 
