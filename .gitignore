@@ -23,3 +23,5 @@ Thumbs.db
 # Databases (optional, if local only)
 *.sqlite3
 *.db
+
+ui/css/bootstrap.min.css
