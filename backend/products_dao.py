@@ -52,14 +52,4 @@ def update_product(connection, product):
 
 if __name__ == '__main__':
     connection = get_sql_connection()
-    # insert_new_product(connection,{
-    #     "name": "tomatoes",
-    #     "uom_id": 2,
-    #     "price_per_unit": 2.5
-    # })
-
-    # delete_product(connection, 8)
-
-    # update_product(connection, 1, 4)
-    # pp(get_all_products(connection))
     connection.close()
