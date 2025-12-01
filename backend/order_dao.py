@@ -28,6 +28,23 @@ def insert_order(connection, order):
     connection.commit()
     return order_id
 
+def get_all_orders(connection):
+    cursor = connection.cursor()
+
+    query = ("SELECT datetime, order_id, customer_name, total FROM orders")
+
+    cursor.execute(query)
+    response = []
+
+    for (datetime, order_id, customer_name, total) in cursor:
+        response.append({
+            'datetime': datetime,
+            'order_id': order_id,
+            'customer_name': customer_name,
+            'total': total
+        })
+    return response
+
 if __name__ == "__main__":
     connection = get_sql_connection()
     print(insert_order(connection, {
