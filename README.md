@@ -1,4 +1,4 @@
 # Grocery-Store-Web-Application
-Front end: HTML/CSS/Javascript/Bootstrap
-Backend: Python and Flask
-Database: MySQL
+1. Front end: HTML/CSS/Javascript/Bootstrap
+2. Backend: Python and Flask
+3. Database: MySQL
